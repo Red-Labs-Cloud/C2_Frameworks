@@ -8,8 +8,8 @@
   tasks:
     - name : Define hostname
       shell: hostnamectl set-hostname dev.rfs.local
-        become: yes
-        become_method: sudo
+      become: yes
+      become_method: sudo
 
     - name: APT Package Updater
       apt:
