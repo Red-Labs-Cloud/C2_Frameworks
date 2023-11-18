@@ -5,7 +5,7 @@
 
 - hosts: all
   remote_user: root
-
+  become: true
   tasks:
     - name: APT Package Updater
       apt:
