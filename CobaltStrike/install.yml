@@ -15,8 +15,6 @@
       apt:
         upgrade: yes
         update_cache: yes
-        become: yes
-        become_method: sudo
 
     - name: Install Dependencies
       ansible.builtin.apt:
