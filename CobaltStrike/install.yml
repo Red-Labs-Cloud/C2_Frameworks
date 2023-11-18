@@ -1,6 +1,6 @@
 
 ---
-- description: Prepare Debian 12 machine to run Cobalt Strike
+#Prepare Debian 12 machine to run Cobalt Strike
 - hosts: all
 
   become: true
