@@ -28,13 +28,13 @@
       community.general.ufw:
         state: enabled
         policy: allow
-      become: yes
+
         
     - name: Allow SSH
       community.general.ufw:
         rule: allow
         name: OpenSSH
-      become: yes
+
 
 
     - name: Allow all access to tcp port 80
@@ -42,7 +42,7 @@
         rule: allow
         port: '80'
         proto: tcp
-      become: yes
+
 
 
     - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
