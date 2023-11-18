@@ -27,6 +27,7 @@
       community.general.ufw:
         state: enabled
         policy: allow
+      become: yes
 
         
     - name: Allow SSH
