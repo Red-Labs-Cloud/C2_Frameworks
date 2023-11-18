@@ -7,6 +7,9 @@
   remote_user: debian
   become: yes
   tasks:
+    - name : Define hostname
+      shell: hostnamectl set-hostname dev.rfs.local
+      
     - name: APT Package Updater
       apt:
         upgrade: yes
