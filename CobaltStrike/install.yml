@@ -3,34 +3,38 @@
 # Cobalt Strike Debian 12 by RFS
 #
 
-- hosts: all
+- hosts: "*"
   remote_user: debian
   become: yes
-  become_method: sudo
   tasks:
     - name: APT Package Updater
       apt:
         upgrade: yes
         update_cache: yes
+
     - name: Install Dependencies
       ansible.builtin.apt:
         pkg:
         - ufw
         - openjdk-17-jdk
         - libreswan
+
     - name: Allow everything and enable UFW
       community.general.ufw:
         state: enabled
         policy: allow
+
     - name: Allow SSH
       community.general.ufw:
         rule: allow
         name: OpenSSH
+
     - name: Allow all access to tcp port 80
       community.general.ufw:
         rule: allow
         port: '80'
         proto: tcp
+
     - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
       community.crypto.openssh_keypair:
         path: /tmp/id_ssh_rsa
