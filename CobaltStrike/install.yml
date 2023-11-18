@@ -6,7 +6,7 @@
 - hosts: all
   remote_user: root
   become: yes
-  become_method: su
+  become_method: sudo
   tasks:
     - name: APT Package Updater
       apt:
