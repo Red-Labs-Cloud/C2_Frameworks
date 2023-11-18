@@ -5,16 +5,18 @@
 
 - hosts: "*"
   remote_user: debian
-  become: yes
-  become_method: sudo
   tasks:
     - name : Define hostname
       shell: hostnamectl set-hostname dev.rfs.local
+        become: yes
+        become_method: sudo
 
     - name: APT Package Updater
       apt:
         upgrade: yes
         update_cache: yes
+        become: yes
+        become_method: sudo
 
     - name: Install Dependencies
       ansible.builtin.apt:
@@ -27,19 +29,27 @@
       community.general.ufw:
         state: enabled
         policy: allow
+        become: yes
+        become_method: sudo
 
     - name: Allow SSH
       community.general.ufw:
         rule: allow
         name: OpenSSH
+        become: yes
+        become_method: sudo
 
     - name: Allow all access to tcp port 80
       community.general.ufw:
         rule: allow
         port: '80'
         proto: tcp
+        become: yes
+        become_method: sudo
 
     - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
       community.crypto.openssh_keypair:
         path: /tmp/id_ssh_rsa
         force: true
+        become: yes
+        become_method: sudo
