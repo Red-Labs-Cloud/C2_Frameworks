@@ -1,8 +1,7 @@
 
 ---
-#Prepare Debian 12 machine to run Cobalt Strike
-- hosts: all
 
+- hosts: all
   become: true
   remote_user: root
 
