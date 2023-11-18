@@ -1,5 +1,7 @@
-
 ---
+#
+# Cobalt Strike Debian 12 by RFS
+#
 
 - hosts: all
   remote_user: root
@@ -28,3 +30,7 @@
         rule: allow
         port: '80'
         proto: tcp
+    - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
+      community.crypto.openssh_keypair:
+        path: /tmp/id_ssh_rsa
+        force: true
