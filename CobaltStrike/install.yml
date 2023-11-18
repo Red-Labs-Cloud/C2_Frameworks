@@ -1,0 +1,18 @@
+
+---
+- description: Prepare Debian 12 machine to run Cobalt Strike
+- hosts: all
+
+  become: true
+
+  tasks:
+    - name: APT Package Updater
+      apt:
+        upgrade: yes
+        update_cache: yes
+    - name: Install Dependencies
+      ansible.builtin.apt:
+        pkg:
+        - ufw
+        - openjdk-17-jdk
+        - libreswan
