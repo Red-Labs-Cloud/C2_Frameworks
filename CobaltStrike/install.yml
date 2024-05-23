@@ -22,6 +22,7 @@
         - ufw
         - openjdk-17-jdk
         - libreswan
+        - wireguard
 
 
     - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
