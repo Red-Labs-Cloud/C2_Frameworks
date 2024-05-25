@@ -18,11 +18,11 @@ This repository can contain various resources depending on your specific setup a
 ## Getting Started
 The specific instructions for using this repository will depend on the resources included. However, here are some general steps to get started:
 
-1 - Clone the Repository: Clone this repository to your local machine using Git.
-2 - Review Documentation: Carefully review any included documentation for specific setup instructions and configuration details.
-3 - Deploy the Environment: Follow the provided deployment scripts or instructions to set up the cyber range environment.
-4 - Import Scenarios: Import any pre-built scenarios or customize them to fit your training needs.
-5 - Start Training: Begin red team training exercises within the deployed cyber range environment.
+- Clone the Repository: Clone this repository to your local machine using Git.
+- Review Documentation: Carefully review any included documentation for specific setup instructions and configuration details.
+- Deploy the Environment: Follow the provided deployment scripts or instructions to set up the cyber range environment.
+- Import Scenarios: Import any pre-built scenarios or customize them to fit your training needs.
+- Start Training: Begin red team training exercises within the deployed cyber range environment.
 
 ## Contributing
 We welcome contributions to this repository! If you have any scripts, scenarios, or documentation that can benefit red team cyber range training, feel free to submit a pull request.
