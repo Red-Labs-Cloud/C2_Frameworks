@@ -24,6 +24,10 @@ The specific instructions for using this repository will depend on the resources
 - Import Scenarios: Import any pre-built scenarios or customize them to fit your training needs.
 - Start Training: Begin red team training exercises within the deployed cyber range environment.
 
+## Documentation
+- https://blog.redlabs.cloud/
+- https://docs.redlabs.cloud/
+
 ## Contributing
 We welcome contributions to this repository! If you have any scripts, scenarios, or documentation that can benefit red team cyber range training, feel free to submit a pull request.
 
