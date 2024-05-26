@@ -29,6 +29,7 @@ Our base machine is ready to deploy any lab locally or Cloud.
 rfs@debian:~$ redlabs --help
 
 redlabs --help
+redlabs --install
 redlabs --config
 
 - c2-cs
