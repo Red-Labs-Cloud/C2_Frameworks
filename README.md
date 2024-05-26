@@ -46,12 +46,8 @@ redlabs --local
 ## C2 Servers
 
 
-## Install Locally
+### Install Locally
 
-
-
-
-## Install
 
 ```console
 rfs@debian:~$ redlabs --install
@@ -61,18 +57,18 @@ rfs@debian:~$ redlabs --install
 rfs@debian:~$ redlabs --config web --local
 ```
 
-## Install a Cobalt Strike C2 Locally
+#### Install a Cobalt Strike C2 Locally
 
 ```console
 rfs@debian:~$ redlabs --install c2-cs --local
 ```
 
-## Config a Cobalt Strike C2 Locally
+#### Config a Cobalt Strike C2 Locally
 ```console
 rfs@debian:~$ redlabs --config c2-cs
 ```
 
-## Cloud Install
+### Cloud Install
 ```console
 rfs@debian:~$ redlabs --config web --aws
 ```
