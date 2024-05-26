@@ -19,7 +19,7 @@ rfs@debian:~$ cd C2_Infrastructure
 ### Install all Necessary packages
 
 ```console
-rfs@debian:~$ sudo ./install.sh
+rfs@debian:~/C2_Infrastructure$ sudo ./install.py
 ```
 
 
@@ -37,15 +37,11 @@ redlabs --config
 - c2-cs
 - c2-mythic
 
-
-
 redlabs --local
 
 - Vmware
 - ProxMox
 - Linux Box (Any)
-
-
 
 ```
 
