@@ -5,8 +5,8 @@ Unveiling the secret weapon of cyber attackers. This series explores Command & C
 ## Deploy the Infrastructure
 
 
-### Clone the Repo
-
+### Prepare Local Environment
+Clone the Repo
 ```console
 rfs@debian:~$ git clone https://github.com/Red-Labs-Cloud/C2_Infrastructure.git
 ```
@@ -14,9 +14,7 @@ rfs@debian:~$ git clone https://github.com/Red-Labs-Cloud/C2_Infrastructure.git
 ```console
 rfs@debian:~$ cd C2_Infrastructure
 ```
-
-
-### Install all Necessary packages
+Install all Necessary packages
 
 ```console
 rfs@debian:~/C2_Infrastructure$ sudo ./install.py
