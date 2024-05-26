@@ -8,6 +8,18 @@ Unveiling the secret weapon of cyber attackers. This series explores Command & C
 
 
 
+```console
+rfs@debian:~$ redlabs --install
+```
+
+```console
+rfs@debian:~$ redlabs --config web --local
+```
+
+
 
 
 ## Cloud Install
+```console
+rfs@debian:~$ redlabs --config web --aws
+```
