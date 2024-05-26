@@ -11,20 +11,19 @@ Clone the Repo
 rfs@debian:~$ git clone https://github.com/Red-Labs-Cloud/C2_Infrastructure.git
 ```
 
+Enter the new folder
+
 ```console
 rfs@debian:~$ cd C2_Infrastructure
 ```
-Install all Necessary packages
+Install all Necessary packages on our local machine.
 
 ```console
 rfs@debian:~/C2_Infrastructure$ sudo ./install.py
 ```
+Our base machine is ready to deploy any lab locally or Cloud.
 
-
-## Install Locally
-
-
-Command Help
+## Command Help
 
 ```console
 rfs@debian:~$ redlabs --help
@@ -42,6 +41,14 @@ redlabs --local
 - Linux Box (Any)
 
 ```
+
+## C2 Servers
+
+
+## Install Locally
+
+
+
 
 ## Install
 
