@@ -26,6 +26,30 @@ rfs@debian:~$ sudo ./install.sh
 ## Install Locally
 
 
+Command Help
+
+```console
+rfs@debian:~$ redlabs --help
+
+redlabs --help
+redlabs --config
+
+- c2-cs
+- c2-mythic
+
+
+
+redlabs --local
+
+- Vmware
+- ProxMox
+- Linux Box (Any)
+
+
+
+```
+
+## Install
 
 ```console
 rfs@debian:~$ redlabs --install
@@ -35,8 +59,16 @@ rfs@debian:~$ redlabs --install
 rfs@debian:~$ redlabs --config web --local
 ```
 
+## Install a Cobalt Strike C2 Locally
 
+```console
+rfs@debian:~$ redlabs --install c2-cs --local
+```
 
+## Config a Cobalt Strike C2 Locally
+```console
+rfs@debian:~$ redlabs --config c2-cs
+```
 
 ## Cloud Install
 ```console
