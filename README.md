@@ -19,7 +19,7 @@ rfs@debian:~$ cd C2_Infrastructure
 Install all Necessary packages on our local machine.
 
 ```console
-rfs@debian:~/C2_Infrastructure$ sudo ./install.py
+rfs@debian:~/C2_Infrastructure$ sudo ./install.sh
 ```
 Our base machine is ready to deploy any lab locally or Cloud.
 
