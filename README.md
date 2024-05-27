@@ -50,24 +50,14 @@ redlabs --local
 
 ### Install Locally
 
-1 - Install it
-
-```console
-rfs@debian:~$ redlabs --install c2-cs --local
-```
-2- Then configure it!
-
-```console
-rfs@debian:~$ redlabs --config c2-cs --local
-```
-
 #### Install a Cobalt Strike C2 Locally
-
+1 - Install it
 ```console
 rfs@debian:~$ redlabs --install c2-cs --local
 ```
 
 #### Config a Cobalt Strike C2 Locally
+2- Then configure it!
 ```console
 rfs@debian:~$ redlabs --config c2-cs
 ```
