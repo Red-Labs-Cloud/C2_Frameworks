@@ -3,7 +3,7 @@
 # Cobalt Strike Debian 12 by RFS
 #
 
-- hosts: "*"
+- hosts: "cobalstrike"
   remote_user: debian
   become_method: sudo
   tasks:
