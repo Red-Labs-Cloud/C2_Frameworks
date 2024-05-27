@@ -1,0 +1,75 @@
+---
+- hosts: relays
+  remote_user: root
+  vars_files:
+    - vars.yml
+  vars:
+    ansible_ssh_private_key_file: ~/DropletSSH_Key
+  become: true
+
+  tasks:
+    - name: Set a hostname - generate random string?
+      ansible.builtin.hostname:
+        name: relay01
+        use: systemd
+    - name: Install a list of packages
+      ansible.builtin.apt:
+        pkg:
+        - wireguard
+        - socat
+        - ufw
+    - name: Add sys user
+      ansible.builtin.user:
+        name: rfs
+        shell: /bin/bash
+        groups: shadow
+        append: yes
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+    - name: deploy resolv.conf template
+      template:
+        src: ../settings/resolv.conf
+        dest: /etc/resolv.conf
+        owner: root
+        group: root
+        mode: 0644
+        backup: yes
+## UFW Configs
+
+    - name: Allow everything and enable UFW
+      community.general.ufw:
+        state: enabled
+        policy: deny
+    - name: Allow SSH
+      community.general.ufw:
+        rule: allow
+        port: ssh
+        proto: tcp
+    - name: Allow port 55420 - Wireguard custom
+      community.general.ufw:
+        rule: allow
+        port: '55420'
+        proto: tcp
+# UFW good stuf
+
+    - name: Allow In to 80 from everywhere and map to port 65050 on the C2 - HTTP
+      community.general.ufw:
+        rule: allow
+        interface: eth0
+        direction: in
+        proto: tcp
+        src: 0.0.0.0
+        from_port: '80'
+        dest: "{{ C2_IP }}"
+        to_port: '65050'
+    - name: Allow In to 443 from everywhere and map to port 65051 on the C2 - HTTPs
+      community.general.ufw:
+        rule: allow
+        interface: eth0
+        direction: in
+        proto: tcp
+        src: 0.0.0.0
+        from_port: '443'
+        dest: "{{ C2_IP }}"
+        to_port: '65051'
