@@ -21,7 +21,6 @@
         pkg:
         - ufw
         - openjdk-17-jdk
-        - libreswan
         - wireguard
 
 
