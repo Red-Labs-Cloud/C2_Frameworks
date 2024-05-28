@@ -1,0 +1,16 @@
+---
+Relay01: "<IP>"
+
+Cobalt_URL: "http://#.com/cobaltstrike.zip"
+
+HTTP_Port: 80
+HTTPs_Port: 443
+DNS_Port: 53
+SMB_Port: 445
+SSH_Port: 2222
+Wireguard_Port: 55420
+C2_Port: 33485
+
+
+Sys_User: rfs
+SSHKeys_Name: labkeys
