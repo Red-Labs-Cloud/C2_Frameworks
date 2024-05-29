@@ -1,12 +1,12 @@
 import argparse
 import os
 
-def c2_local(config_file):
-  print(f"Installing software based on config: {config_file}")
+def c2_install(c2,place):
+  print(f"Installing " + c2 + " in " + place)
   os.system("ansible-playbook C2s/CobaltStrike/cs-install.yml -i ./local_host")
 
-def install_cloud(config_file):
-  os.system("ansible-playbook C2s/CobaltStrike/cs-install.yml -i ./cloud_hosts")
+def relay_local(relay,place):
+  os.system("ansible-playbook C2s/CobaltStrike/cs-install.yml -i ./local_host")
 
 def delete():
   print("RFS Delete software and configuration---")
@@ -27,16 +27,21 @@ def main():
   deploy.add_argument('-azr', help='Azure Cloud')
 
   service = base.add_argument_group('Services')
-  service.add_argument('--rl', "--relay",help='Relay')
+  service.add_argument('--rl', "--relay",action='store_true',required=False,help='Relay')
   service.add_argument('--c2', "--command-control",help='C2')
 
+  subparsers = base.add_subparsers(
+      title="Install", help="Install test"
+  )
+  add_parser = subparsers.add_parser("local", help="add two numbers a and b")
+  add_parser.set_defaults(func=relay_local)
 
   args = base.parse_args()
 
-  if args.install and args.local and args.relay:
-    c2_local(args.config_file)
-  elif args.install == "cloud" and args.lh == "deploys":
-    install_cloud(args.config_file)
+  if args.install and args.local =="relay" and args.relay =="socat":
+    relay_local()
+  elif args.install and args.c2 =="cobalt":
+    c2_install('cobalt','local')
   elif args.install == "delete":
     delete()
   else:
