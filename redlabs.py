@@ -12,29 +12,28 @@ def delete():
   print("RFS Delete software and configuration---")
 
 def main():
-  install = argparse.ArgumentParser(
+  base = argparse.ArgumentParser(
                     prog='Red Labs',
                     description='Red Labs Cloud installer',
                     epilog='Martian Defense Team')
-  install.add_argument("-i", "--install",  action='append',required=False, help="Configure the Labs")
-  install.add_argument("-c", "--config", dest="config_file", required=False, help="Configure the Labs")
-  install.add_argument("-d", "--delete", required=False, help="Delete the Labs")
+  base.add_argument("-i", "--install",  action='store_true',required=False, help="Configure the Labs")
+  base.add_argument("-c", "--config", dest="config_file", required=False, help="Configure the Labs")
+  base.add_argument("-d", "--delete", required=False, help="Delete the Labs")
   
-  deploy = install.add_argument_group('Deploy')
-  deploy.add_argument('--lh',"--localhost",  action='append',help='Localhost')
-  deploy.add_argument('--dg', help='Digital Ocean Cloud')
-  deploy.add_argument('--aws', help='AWS Cloud')
-  deploy.add_argument('--azr', help='Azure Cloud')
+  deploy = base.add_argument_group('Deploy')
+  deploy.add_argument('-l',"--local",  action='store_true',help='Localhost')
+  deploy.add_argument('-dg', help='Digital Ocean Cloud')
+  deploy.add_argument('-aws', help='AWS Cloud')
+  deploy.add_argument('-azr', help='Azure Cloud')
 
-  service = install.add_argument_group('Services')
-  service.add_argument('--rl', help='Relay')
-  service.add_argument('--c2', help='C2')
+  service = base.add_argument_group('Services')
+  service.add_argument('--rl', "--relay",help='Relay')
+  service.add_argument('--c2', "--command-control",help='C2')
 
 
-  #install.print_help()
-  args = install.parse_args()
+  args = base.parse_args()
 
-  if args.install and args.lh:
+  if args.install and args.local and args.relay:
     c2_local(args.config_file)
   elif args.install == "cloud" and args.lh == "deploys":
     install_cloud(args.config_file)
