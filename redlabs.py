@@ -9,7 +9,7 @@ def install_cloud(config_file):
   os.system("ansible-playbook C2s/CobaltStrike/cs-install.yml -i ./cloud_hosts")
 
 def delete():
-  print("RFS Delete software and configuration")
+  print("RFS Delete software and configuration---")
 
 def main():
   install = argparse.ArgumentParser(
