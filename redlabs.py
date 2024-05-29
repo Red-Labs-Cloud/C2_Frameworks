@@ -16,6 +16,7 @@ def main():
                     prog='Red Labs',
                     description='Red Labs Cloud installer',
                     epilog='Martian Defense Team')
+  
   base.add_argument("-i", "--install",  action='store_true',required=False, help="Configure the Labs")
   base.add_argument("-c", "--config", dest="config_file", required=False, help="Configure the Labs")
   base.add_argument("-d", "--delete", required=False, help="Delete the Labs")
