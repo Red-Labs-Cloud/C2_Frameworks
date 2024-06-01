@@ -1,0 +1,6 @@
+[relays]
+relay01 ansible_host=64.227.75.180 ansible_user=root
+
+
+[cobalstrike]
+c2-01 ansible_host=165.22.198.150 ansible_user=root
