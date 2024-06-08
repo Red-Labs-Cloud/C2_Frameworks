@@ -22,7 +22,7 @@ def main():
   base.add_argument("-d", "--delete", required=False, help="Delete the Labs")
   
   deploy = base.add_argument_group('Deploy')
-  deploy.add_argument('-l',"--local",  action='store_true',help='Localhost')
+  deploy.add_argument('-l',"--local",  action='store_true',help='Localhost or Network')
   deploy.add_argument('-dg', help='Digital Ocean Cloud')
   deploy.add_argument('-aws', help='AWS Cloud')
   deploy.add_argument('-azr', help='Azure Cloud')
